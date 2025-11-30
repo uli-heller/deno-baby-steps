@@ -55,8 +55,7 @@ Command Line Parameters
 - Some preparations:
   ```
   cd 005-command-line-parameters
-  deno init
-  npm install npm:commander@latest
+  deno install npm:commander@latest
   # ... installs version 14.0.2
   ```
 - File: [parse.cjs](005-command-line-parameters/parse.cjs)
