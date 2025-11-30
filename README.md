@@ -112,6 +112,28 @@ Here a dummy implementation based on "commander":
     -h, --help                                          display help for command
   ```
 
+Self-contained Binary
+---------------------
+
+- Reference: [deno - Self-contained Executable Programs with Deno Compile](https://deno.com/blog/deno-compile-executable-programs)
+- Folder: [007-self-contained](007-self-contained)
+- Creating the self-contained binary: `deno compile -A --node-modules-dir=auto -o dummy-mongoclient dummy-mongoclient.cjs`
+- Tests:
+  ```
+  $ ./dummy-mongoclient -h
+  Usage: dummy-mongoclient [OPTIONS]...
+  
+  Options:
+    -v, --version                                       output the version number
+    -c, --connectionString <mongodb-connection-string>  connection-string to connect to mongo db. (default: "mongodb://localhost:27017/")
+    -t, --tlsCertificateFile <certificate.pem>          client certificate for TLS auth.
+    -h, --help                                          display help for command
+
+  $ ls -hl dummy-mongoclient
+  -rwxr-xr-x 1 uli uli 84M Nov 30 20:05 dummy-mongoclient
+  ```
+
+
 Working With MongoDB
 --------------------
 
