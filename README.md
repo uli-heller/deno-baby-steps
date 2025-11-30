@@ -133,44 +133,13 @@ Self-contained Binary
   -rwxr-xr-x 1 uli uli 84M Nov 30 20:05 dummy-mongoclient
   ```
 
-
 Working With MongoDB
 --------------------
 
 - Create project directory and cd into it: [010-mongodb](010-mongodb)
-- Initialize the node project: `npm init -y` -> creates [package.json](010-mongodb/package.json)
-  ```json
-  {
-    "name": "010-mongodb",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "type": "commonjs"
-  }
-  ```
-- Install the mongodb driver: `npm install mongodb@latest` -> 7.0.0
-  ```diff
-  diff --git a/010-mongodb/package.json b/010-mongodb/package.json
-  index de1cc83..af704c5 100644
-  --- a/010-mongodb/package.json
-  +++ b/010-mongodb/package.json
-  @@ -9,5 +9,8 @@
-     "keywords": [],
-     "author": "",
-     "license": "ISC",
-  -  "type": "commonjs"
-  +  "type": "commonjs",
-  +  "dependencies": {
-  +    "mongodb": "^7.0.0"
-  +  }
-   }
-  ```
+- Install the mongodb driver: `deno install npm:mongodb@latest` -> 7.0.0
+  - deno.json
+  - deno.lock
   
 Links And References
 --------------------
