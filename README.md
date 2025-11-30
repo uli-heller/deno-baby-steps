@@ -2,37 +2,36 @@ node-baby-steps
 ===============
 
 This is a tutorial project for myself to get
-some basic knowledge about node and javascript.
+some basic knowledge about deno and javascript.
 At the moment, it may not be beneftial to you
 at all!
 
 Preparations
 ------------
 
-Install NODE. Details: TBD.
+Install DENO. Details: TBD.
 
 Verify the installation:
 
 ```sh
-$ node --version
-v24.11.1
-
-$ npm --version
-11.6.2
+$ deno --version
+deno 2.5.6 (stable, release, x86_64-unknown-linux-gnu)
+v8 14.0.365.5-rusty
+typescript 5.9.2
 ```
 
 Hello World
 -----------
 
 - Folder: [000-hello-world](00-hello-world)
-- File: [000-hello-world/hello-world.js](000-hello-world/hello-world.js)
+- File: [000-hello-world/hello-world.cjs](000-hello-world/hello-world.cjs)
   ```
-  console.log('Hello world from Node.js');
+  console.log('Hello world from deno.cjs');
   ```
 - Run:
   ```
-  $ node 00-hello-world/hello-world.js 
-  Hello world from Node.js
+  $ deno 000-hello-world/hello-world.cjs 
+  Hello world from deno.cjs
   ```
 
 Command Line Parameters
@@ -41,19 +40,14 @@ Command Line Parameters
 ### Dump Them All
 
 - Folder: [005-command-line-parameters](005-command-line-parameters)
-- File: [005-command-line-parameters/dump.js)(005-command-line-parameters/dump.js)
+- File: [005-command-line-parameters/dump.cjs)(005-command-line-parameters/dump.cjs)
   ```
   console.log(process.argv);
   ```
 - Run:
   ```
-  $ node 005-command-line-parameters/dump.js -o sample.out
-  [
-    '/home/uli/Software/node-v24.11.1-linux-x64/bin/node',
-    '/home/uli/git/github/uli-heller/node-baby-steps/005-command-line-parameters/dump.js',
-    '-o',
-    'sample.out'
-  ]
+  $ deno 005-command-line-parameters/dump.cjs -o sample.out
+  [ [Getter], [Getter], "-o", "sample.out" ]
   ```
 
 ### Use "commander"
@@ -61,14 +55,14 @@ Command Line Parameters
 - Some preparations:
   ```
   cd 005-command-line-parameters
-  npm init -y
-  npm install commander@latest
+  deno init
+  npm install npm:commander@latest
   # ... installs version 14.0.2
   ```
-- File: [parse.js](005-command-line-parameters/parse.js)
+- File: [parse.cjs](005-command-line-parameters/parse.cjs)
 - Run:
   ```
-  $ node 005-command-line-parameters/parse.js -h
+  $ deno -A --node-modules-dir=auto  ./parse.cjs -h
   Usage: parse [OPTIONS]...
   
   Options:
@@ -77,11 +71,11 @@ Command Line Parameters
     -R, --reverse               Flag to reverse the output.
     -h, --help                  display help for command
   
-  $ node 005-command-line-parameters/parse.js 
+  $ deno -A --node-modules-dir=auto parse.cjs 
   Reverse: Reverse flag is not present.
   Output: default-output-file.txt
 
-  $ node 005-command-line-parameters/parse.js -R -o uli.txt
+  $ deno -A --node-modules-dir=auto parse.cjs -R -o uli.txt
   Reverse: Reverse flag is present.
   Output: uli.txt
   ```
@@ -105,10 +99,10 @@ as mongosh, so I need these parameters:
 
 Here a dummy implementation based on "commander":
 
-- File: [dummy-mongoclient.js](005-command-line-parameters/dummy-mongoclient.js)
+- File: [dummy-mongoclient.cjs](005-command-line-parameters/dummy-mongoclient.cjs)
 - Run:
   ```
-  $ node 005-command-line-parameters/dummy-mongoclient.js -h
+  $ deno -A --node-modules-dir=auto dummy-mongoclient.cjs -h
   Usage: dummy-mongoclient [OPTIONS]...
   
   Options:
