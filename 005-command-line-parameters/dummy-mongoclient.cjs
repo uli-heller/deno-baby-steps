@@ -16,4 +16,4 @@ const options = program.opts();
 console.log('connectionString:', options.connectionString);
 console.log('apiVersion:', apiVersion);
 console.log('tls:', tls);
-console.log('tlsCertificateFile:', options.tleCertificateFile);
+console.log('tlsCertificateFile:', options.tlsCertificateFile);
