@@ -140,7 +140,10 @@ Working With MongoDB
 - Install the mongodb driver: `deno install npm:mongodb@latest` -> 7.0.0
   - deno.json
   - deno.lock
-  
+- Install commander: `deno install npm:commander@latest`
+- File: [mongoclient.cjs](010-mongodb/mongoclient.cjs)
+- Run it: `deno -A --node-modules-dir=auto mongoclient.cjs`
+
 Links And References
 --------------------
 
