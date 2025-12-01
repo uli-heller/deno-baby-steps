@@ -1,5 +1,6 @@
 {
   "imports": {
+    "commander": "npm:commander@^14.0.2",
     "mongodb": "npm:mongodb@^7.0.0"
   }
 }

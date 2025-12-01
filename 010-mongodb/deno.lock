@@ -1,6 +1,7 @@
 {
   "version": "5",
   "specifiers": {
+    "npm:commander@^14.0.2": "14.0.2",
     "npm:mongodb@7": "7.0.0"
   },
   "npm": {
@@ -21,6 +22,9 @@
     },
     "bson@7.0.0": {
       "integrity": "sha512-Kwc6Wh4lQ5OmkqqKhYGKIuELXl+EPYSCObVE6bWsp1T/cGkOCBN0I8wF/T44BiuhHyNi1mmKVPXk60d41xZ7kw=="
+    },
+    "commander@14.0.2": {
+      "integrity": "sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ=="
     },
     "memory-pager@1.5.0": {
       "integrity": "sha512-ZS4Bp4r/Zoeq6+NLJpP+0Zzm0pR8whtGPf1XExKLJBAczGMnSi3It14OiNCStjQjM6NU1okjQGSxgEZN8eBYKg=="
@@ -68,6 +72,7 @@
   },
   "workspace": {
     "dependencies": [
+      "npm:commander@^14.0.2",
       "npm:mongodb@7"
     ]
   }
