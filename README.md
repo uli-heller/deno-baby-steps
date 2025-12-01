@@ -142,7 +142,26 @@ Working With MongoDB
   - deno.lock
 - Install commander: `deno install npm:commander@latest`
 - File: [mongoclient.cjs](010-mongodb/mongoclient.cjs)
-- Run it: `deno -A --node-modules-dir=auto mongoclient.cjs`
+- Run it:
+  - Show usage: `deno -A --node-modules-dir=auto mongoclient.cjs -h`
+  - Connect to a local mongodb:
+    ```
+    deno -A --node-modules-dir=auto mongoclient.cjs`
+    ```
+  - Connect to a remote mongodb:
+    ```
+    URL="mongodb+srv://mydb.mongodb.net/"
+    AUTH_SOURCE='$external'
+    AUTH_MECHANISM='MONGODB-X509'
+    TLS='true'
+    TLS_CERTIFICATE_KEY_FILE='.../path/to/my/key/file/uli-key.pem'
+    CONNECTION_STRING="${URL}"
+    CONNECTION_STRING="${CONNECTION_STRING}?authSource=$(echo -n "${AUTH_SOURCE}"|jq -sRr @uri)"
+    CONNECTION_STRING="${CONNECTION_STRING}&authMechanism=${AUTH_MECHANISM}"
+    CONNECTION_STRING="${CONNECTION_STRING}&tls=${TLS}"
+    CONNECTION_STRING="${CONNECTION_STRING}&tlsCertificateKeyFile=$(echo -n "${TLS_CERTIFICATE_KEY_FILE}"|jq -sRr @uri)"
+    deno -A  --node-modules-dir=auto mongoclient.cjs  -c "${CONNECTION_STRING}"
+    ```
 
 Links And References
 --------------------
