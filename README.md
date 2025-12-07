@@ -1,4 +1,4 @@
-node-baby-steps
+deno-baby-steps
 ===============
 
 This is a tutorial project for myself to get
@@ -163,6 +163,24 @@ Working With MongoDB
     deno -A  --node-modules-dir=auto mongoclient.cjs  -c "${CONNECTION_STRING}"
     ```
 
+Getting Rid Off "--node-modules-dir=auto"
+-----------------------------------------
+
+By extending "deno.json" a little bit, you can get rid off
+the option "--node-modules-dir=auto":
+
+```diff
+deno.json
+@@ -1,5 +1,6 @@
+ {
+   "imports": {
+     "commander": "npm:commander@^14.0.2"
+-  }
++  },
++  "nodeModulesDir": "auto"
+ }
+```
+
 Links And References
 --------------------
 
@@ -170,5 +188,5 @@ Links And References
 - [DigitalOcean - How To Handle Command-line Arguments in Node.js Scripts](https://www.digitalocean.com/community/tutorials/nodejs-command-line-arguments-node-scripts)
 - [NPM - Commander.js](https://www.npmjs.com/package/commander)
 - [MongoDB - MongoDB Node Driver](https://www.mongodb.com/docs/drivers/node/current/)
-- [dev.to -The final step: How to package a Node.JS application as an exe](https://dev.to/luckynkosi/the-final-step-how-to-package-a-node-js-application-4hol)
-- [Amplification -5 Different Tools to Bundle Node.js Apps]( https://amplication.com/blog/5-different-tools-to-bundle-nodejs-apps)
+- [dev.to - The final step: How to package a Node.JS application as an exe](https://dev.to/luckynkosi/the-final-step-how-to-package-a-node-js-application-4hol)
+- [Amplification - 5 Different Tools to Bundle Node.js Apps]( https://amplication.com/blog/5-different-tools-to-bundle-nodejs-apps)
